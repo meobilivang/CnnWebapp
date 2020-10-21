@@ -1,0 +1,26 @@
+body,
+.login::before {
+    background: url(/img/login-bg.jpg) 0 / cover fixed;
+}
+
+.login {
+    overflow: hidden;
+    position: relative;
+    background-color: hsla(0,0%,100%,.55);
+/*    margin-top: 20px;*/
+    padding: 35px 40px 40px 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(25px);
+    z-index: -1;
+    margin: -40px;
+}

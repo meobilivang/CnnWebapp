@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title th:utext="${title}"></title>
+    <th:block th:include="common/css-common.html"></th:block>
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="common/menuleft-common.html"></th:block>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <th:block th:include="common/menutop-common.html"></th:block>
+            
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2 th:utext="${title}"></h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a th:href="@{/}">Homepage</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a>User Manager</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong th:utext="${title}"></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="wrapper wrapper-content animated fadeInRight text-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5 th:utext="${title}"></h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <table class="table table-bordered" sec:authorize="hasRole('ROLE_PROF')">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Position</th>
+                                            <th>Department</th>
+                                            <th>Created date</th>
+                                            <th>Edit user</th>
+                                            <th>Delete user</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-bordered" sec:authorize="hasRole('ROLE_STUDENT')">
+                                    <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Position</th>
+                                        <th>Department</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="text-left" sec:authorize="hasRole('ROLE_PROF')">
+                                    <a class="btn btn-primary" href="/add-user">Add new Prof/Student</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <th:block th:include="common/footer-common.html"></th:block>
+        </div>
+
+    </div>
+
+<th:block th:include="common/script-common.html"></th:block>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $.cnnwebapp.userManager.getUserList();
+    });
+</script>
+</body>
+</html>

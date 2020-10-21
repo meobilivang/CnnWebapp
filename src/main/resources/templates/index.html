@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Dashboard</title>
+    <th:block th:include="common/css-common.html"></th:block>
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="common/menuleft-common.html"></th:block>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <th:block th:include="common/menutop-common.html"></th:block>
+
+            <th:block th:include="common/footer-common.html"></th:block>
+        </div>
+
+    </div>
+
+<th:block th:include="common/script-common.html"></th:block>
+</body>
+</html>
