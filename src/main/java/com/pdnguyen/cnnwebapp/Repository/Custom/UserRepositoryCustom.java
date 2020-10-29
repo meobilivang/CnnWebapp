@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 
 /**
  *
+ * PERSISTENCE LAYER
  * Customized Database access operations
  */
 @Repository
@@ -18,7 +19,7 @@ public class UserRepositoryCustom {
     private EntityManager entityManager;
 
     /**
-     *
+     * Find User by Username
      * @param userName
      * @return
      */
@@ -37,7 +38,7 @@ public class UserRepositoryCustom {
     }
 
     /**
-     *
+     * Find User by email
      * @param inputEmail
      * @return
      */

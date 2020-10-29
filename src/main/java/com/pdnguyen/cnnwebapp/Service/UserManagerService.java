@@ -19,7 +19,8 @@ import java.util.List;
 import java.lang.Exception;
 
 /**
- *
+ * 
+ * BUSINESS LAYER
  * Accessing User details
  *
  */
@@ -42,7 +43,8 @@ public class UserManagerService {
     private PasswordEncryptionService passwordEncryptionService;
 
     /***
-     *
+     * 
+     * Retrieve user list
      * @return
      */
     public List<UserDetailListIncomingDto> getUserList() {
@@ -61,6 +63,8 @@ public class UserManagerService {
     }
 
     /***
+     *
+     * Retrieve user by input Id
      *
      * @param userId
      * @return
@@ -86,6 +90,7 @@ public class UserManagerService {
 
     /**
      *
+     * Retrieve user by Name
      * @param userName
      * @return
      */
@@ -109,6 +114,7 @@ public class UserManagerService {
     }
 
     /**
+     * Add new User
      *
      * @param userDetailIncomingDto
      */
@@ -140,6 +146,7 @@ public class UserManagerService {
 
     /**
      *
+     * Edit user
      *
      * @param userDetailIncomingDto
      */
@@ -171,6 +178,8 @@ public class UserManagerService {
 
     /**
      *
+     * Delete user by id
+     *
      * @param userId
      * @return
      */
@@ -192,8 +201,9 @@ public class UserManagerService {
     }
 
     /**
+     *
      * Naive implementation of Password change functionality
-
+     *
      * @param userDetailIncomingDto
      * @return
      */
@@ -201,8 +211,7 @@ public class UserManagerService {
         User newPasswordUser = userRepositoryCustom.findByUserName(userDetailIncomingDto.getUserName());
         String newPassword = userDetailIncomingDto.getPassword();
         //Cant find User
-        if (newPasswordUser == null)
-            return 0;
+        if (newPasswordUser == null) return 0;
         //Change password
         newPasswordUser.setPassword(passwordEncryptionService.encryptPassword(newPassword));
         userRepository.save(newPasswordUser);

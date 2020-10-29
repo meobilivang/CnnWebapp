@@ -13,6 +13,9 @@ import javax.persistence.TypedQuery;
 
 /***
  *
+ * PERSISTENCE LAYER
+ *
+ * Interacting with database
  *
  */
 @Repository

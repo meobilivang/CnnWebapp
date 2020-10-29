@@ -4,6 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
+/**
+ *
+ * Data Transfer Object
+ *
+ * Transfering User object for UserDetailList API
+ *
+ */
 public class UserDetailListIncomingDto {
     private int id;
     private String userName;

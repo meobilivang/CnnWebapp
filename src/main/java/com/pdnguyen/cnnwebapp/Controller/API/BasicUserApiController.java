@@ -18,10 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
+ * ROUTES FOR API
  *
  */
-
-
 @RequestMapping("api/user")
 @RestController
 public class BasicUserApiController {
@@ -35,12 +34,23 @@ public class BasicUserApiController {
     @Autowired
     private UserManagerService userManagerService;
 
+    /**
+     *
+     * API for user-list
+     *
+     * @return
+     */
     @GetMapping(path = "/user-list")
     public ResponseEntity<List<UserDetailListIncomingDto>> getUserList() {
         List<UserDetailListIncomingDto> userList =  userManagerService.getUserList();
         return ResponseEntity.ok(userList);
     }
 
+    /**
+     *
+     * API for role-list
+     * @return
+     */
     @GetMapping(value = "/role-list")
     public ResponseEntity<List<SchoolRole>> getRoleList() {
         List<SchoolRole> schoolRoleList = schoolRoleService.getRoleList();

@@ -5,6 +5,13 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ *
+ * PERSISTENCE LAYER
+ *
+ * SchoolRole object representing School_role table in DB
+ *
+ */
 @Entity
 @Table(name = "school_role", catalog = "FtBVsRUeKh")
 public class SchoolRole {

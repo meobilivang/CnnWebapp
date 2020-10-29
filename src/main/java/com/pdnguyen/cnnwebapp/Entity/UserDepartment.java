@@ -3,6 +3,14 @@ package com.pdnguyen.cnnwebapp.Entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+
+/**
+ *
+ * PERSISTENCE LAYER
+ *
+ * UserDepartment object representing user_department table in DB
+ *
+ */
 @Entity
 @Table(name = "user_department", catalog = "FtBVsRUeKh")
 public class UserDepartment {

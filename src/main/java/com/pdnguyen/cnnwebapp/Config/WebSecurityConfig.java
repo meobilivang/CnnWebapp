@@ -11,7 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
+ * BUSINESS LOGIC LAYER
+ *
  * Config SpringSecurity for Webapp
+ *
  */
 @Configuration
 @EnableWebSecurity

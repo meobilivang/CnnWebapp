@@ -17,6 +17,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /***
+ *
+ * BUSINESS LAYER
+ *
+ *
  * Inherit UserDetailsServices of Spring Security
  *
  */
@@ -29,6 +33,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserDepartmentRepositoryCustom userDepartmentRepositoryCustom;
 
+    /**
+     *
+     * AUTHENTICATION PROCESS
+     * Authenticate a login attempt
+     * Granting Authority to Login User
+     * @param userName
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         User logInUser = userRepositoryCustom.findByUserName(userName);

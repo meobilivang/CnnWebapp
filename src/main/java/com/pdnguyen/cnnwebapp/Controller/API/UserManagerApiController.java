@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ *
+ * API for User Management actions
+ *
+ */
 @RequestMapping("api/user-manager")
 @RestController
 public class UserManagerApiController {
@@ -28,6 +33,8 @@ public class UserManagerApiController {
     private SchoolRoleService schoolRoleService;
 
     /**
+     *
+     * API retrieve full details of all users
      * Only ROLE_PROF can view
      * @return
      */
@@ -37,23 +44,40 @@ public class UserManagerApiController {
         return ResponseEntity.ok(userList);
     }
 
+    /**
+     * API retrieve list of users
+     * @return
+     */
     @GetMapping(path = "/user-list")
     public ResponseEntity<List<UserDetailListIncomingDto>> getUserList() {
         List<UserDetailListIncomingDto> userList =  userManagerService.getUserList();
         return ResponseEntity.ok(userList);
     }
 
+    /**
+     * API retrieve list of roles
+     * @return
+     */
     @GetMapping(path = "/role-list")
     public ResponseEntity<List<SchoolRole>> getRoleList() {
         List<SchoolRole> schoolRoles = schoolRoleService.getRoleList();
         return ResponseEntity.ok(schoolRoles);
     }
 
+    /**
+     * API retrieve user by id
+     * @param userId
+     * @return
+     */
     @GetMapping(value = "/get-user/{userId}")
     public ResponseEntity<UserDetailIncomingDto> getUser(@PathVariable int userId) {
         return ResponseEntity.ok(userManagerService.getUserById(userId));
     }
 
+    /**
+     * API add new user
+     * @param userDetailIncomingDto
+     */
     @PostMapping(path="/add-user")
     public void addUser(@RequestBody UserDetailIncomingDto userDetailIncomingDto) {
         try {
@@ -63,6 +87,10 @@ public class UserManagerApiController {
         }
     }
 
+    /**
+     * API edit user
+     * @param userDetailIncomingDto
+     */
     @PutMapping(value="/edit-user")
     public void editUser(@RequestBody UserDetailIncomingDto userDetailIncomingDto) {
         try {
@@ -72,6 +100,11 @@ public class UserManagerApiController {
         }
     }
 
+    /**
+     * API change password
+     * @param userDetailIncomingDto
+     * @return
+     */
     @PutMapping(value="/change-password")
     public ResponseEntity changePassword(@RequestBody UserDetailIncomingDto userDetailIncomingDto) {
         Integer val = userManagerService.changePassword(userDetailIncomingDto);
@@ -85,6 +118,10 @@ public class UserManagerApiController {
                     .body("No Found");
     }
 
+    /**
+     * API delete user by id
+     * @param userId
+     */
     @DeleteMapping(path="/delete-user/{userId}")
     public void deleteUser(@PathVariable int userId) {
         try {

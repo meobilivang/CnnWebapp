@@ -8,6 +8,11 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Persistence Layer
+ * Entity representing User table in DB
+ *
+ */
 @Entity
 @Table(name = "user", catalog = "FtBVsRUeKh")
 public class User {
@@ -25,7 +30,6 @@ public class User {
     @Column(name="email")
     private String email;
 
-    //@Basic(optional = false)
     @Column(name="user_name", nullable = false)
     private String user_name;
 

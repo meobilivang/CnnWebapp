@@ -5,8 +5,16 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
+/**
+ * Utility methods
+ */
 public class WebUtils {
 
+    /**
+     * Retrieving the Authorities of a User
+     * @param user
+     * @return
+     */
     public static String toString(User user) {
         StringBuilder data = new StringBuilder();
 

@@ -4,6 +4,13 @@ package com.pdnguyen.cnnwebapp.Entity.DTO;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ *
+ * DTO: Data Transfer Object
+ *
+ * Transfering User object data between Layers
+ *
+ */
 public class UserDetailIncomingDto {
 
     private int id;

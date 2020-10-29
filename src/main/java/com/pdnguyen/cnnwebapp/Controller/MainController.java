@@ -13,18 +13,27 @@ import java.security.Principal;
 /***
  *
  * Main Controller for CnnWebApp
- * Navigate to main pages
+ * Controlling the routes on interface of Webapp
  *
  * */
-
 @Controller
 public class MainController {
-
+    /***
+     *
+     * Route for login
+     * @return login
+     */
     @GetMapping(path = "/login")
     public String login() {
         return "loginPage";
     }
 
+    /**
+     * Route for Error page
+     * @param model
+     * @param principal
+     * @return
+     */
     @GetMapping(path = "/403")
     public String denyAccess(Model model, Principal principal) {
         if (principal != null) {
@@ -39,6 +48,11 @@ public class MainController {
         return "403Page";
     }
 
+    /**
+     * Routes for welcome page
+     * @param model
+     * @return
+     */
     @GetMapping(path = { "/", "/welcomePage"} )
     public String mainPage(Model model) {
         model.addAttribute("title", "Welcome to my website");
@@ -47,6 +61,11 @@ public class MainController {
         return "index";
     }
 
+    /**
+     * Route for user-list page
+     * @param model
+     * @return
+     */
     @GetMapping(path = "/user-list")
     public String userList(Model model) {
         model.addAttribute("title", "User List");
@@ -54,6 +73,11 @@ public class MainController {
         return "user-list";
     }
 
+    /**
+     * Route for add-user page
+     * @param model
+     * @return
+     */
     @GetMapping(path = "/add-user")
     public String addUser(Model model) {
         model.addAttribute("title", "Add New User");
@@ -61,6 +85,12 @@ public class MainController {
         return "edit-user";
     }
 
+    /**
+     * Route for edit user page
+     * @param userId
+     * @param model
+     * @return
+     */
     @GetMapping(path = "/edit-user")
     public String editUser(@RequestParam(value = "id") int userId, Model model) {
         model.addAttribute("title", "Edit User");
@@ -68,6 +98,11 @@ public class MainController {
         return "edit-user";
     }
 
+    /**
+     * Route for change password page
+     * @param model
+     * @return
+     */
     @GetMapping(path = "/change-password")
     public String changePassword(Model model) {
         model.addAttribute("title", "Change Password");

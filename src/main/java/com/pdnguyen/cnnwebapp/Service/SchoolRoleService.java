@@ -7,11 +7,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * BUSINESS LAYER
+ *
+ */
 @Service
 public class SchoolRoleService {
     @Autowired
     private SchoolRoleRepository schoolRoleRepository;
 
+    /**
+     * Get role list
+     * @return
+     */
     public List<SchoolRole> getRoleList() {
         List<SchoolRole> roleList = schoolRoleRepository.findAll();
         return roleList;
