@@ -41,12 +41,32 @@ There are ways to build and run this Spring Boot application.
             $ java -jar path/to/your/jarfile.jar fully.qualified.package.Application 
             ```
 
+## FUNCTIONALITIES:
+1. User Management:
+    1. CREATE:
+        - Add new User
+    2. READ:
+        - View User List 
+        - View role list (Prof only)
+    3. UPDATE (Prof Only):
+        - Edit user's info
+    4. DELETE (Prof Only):
+       - Delete user from the list (Prof only)
+
+2. Authentication & Authorization: (Managed by Spring Security)
+- Authorization: 
+    1. ROLE_PROF: Professor (Full access)
+    2. ROLE_STUDENT: Student (Limited access)
+
 ### NOTE:
-Follow this path to the core of this web app: 
+- Follow this path to the core of this web app: 
     **~/src/main/java/com/pdnguyen/cnnwebapp/**
-The HTML, JS, CSS files are the template which i used for client interface, can use Postman for testing.
-## Test accounts:
+- The HTML, JS, CSS files are the template which i used for client interface, can use **Postman** for API testing.
+
+## Test Accounts:
 - Professor: 
     + wtarimo - 123 
 - Student:
     + pnguyen4 - 123
+
+## Enjoy my first big project with Spring Boot !
